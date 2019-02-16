@@ -35,7 +35,7 @@ function applyFilter(blacklist) {
                 console.log(author, 'removed in thread');
                 thread.style.display = 'none';
             }
-            else if (isNasty(reply.innerText.trim(), blacklist)){ //hide last repler'name if nasty
+            else if (author && isNasty(reply.innerText.trim(), blacklist)){ //hide last repler'name if nasty
                 reply.outerHTML = nastyname;
             }
         });
@@ -43,7 +43,7 @@ function applyFilter(blacklist) {
 
     if (posts != null) {
         posts = posts.children;
-        posts.pop(); //remove the last meaningless one
+        // posts.pop(); //remove the last meaningless one
         
         Array.prototype.forEach.call(posts, post => {
             let author;
@@ -51,7 +51,7 @@ function applyFilter(blacklist) {
                 author = post.getElementsByClassName('author')[0].children[0].innerText;
             } catch (e) {}
 
-            if (isNasty(author, blacklist)) {
+            if (author && isNasty(author, blacklist)) {
                 post.style.display = 'none';
             }
         });
