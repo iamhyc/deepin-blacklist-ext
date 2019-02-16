@@ -1,6 +1,10 @@
 
-function render(blacklist)
-{
+function quick_render(blacklist) {
+    //TODO: faster render without replacing all
+}
+
+function render(blacklist) {
+    $("#blist").empty();
     blacklist.forEach(user => {
         $("#blist").append(`<li class="list-group-item d-flex justify-content-between align-items-center">${user}<a class="badge btn-danger badge-pill del-button" href="#">X</a></li>`)
     });
