@@ -1,6 +1,6 @@
 {
     "name":"Deepin Forum Block Extension",
-    "version": "1.1",
+    "version": "1.2",
     "description": "Block annoying users on Deepin Forum",
     "permissions": [
         "declarativeContent", "storage", "webNavigation", "activeTab"
